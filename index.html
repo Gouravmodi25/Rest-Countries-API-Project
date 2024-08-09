@@ -4,12 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rest Countries Api Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <header>
-      <h2>Where is in the World?</h2>
+    <header class="header">
+      <div class="header-content">
+        <h2 class="title">Where is in World?</h2>
+        <p><i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode</p>
+      </div>
     </header>
+    <main>
+      <div class="countries-container"></div>
+    </main>
+    <template class="template-card">
+      <a href="#" class="country-card">
+        <img src="https://flagcdn.com/in.svg" alt="country-flag" />
+        <div class="card-text">
+          <h3 class="card-title">India</h3>
+          <p><b>Population</b>:1380004385</p>
+          <p><b>Region</b>:Asia</p>
+          <p><b>Capitial</b>:New Delhi</p>
+        </div>
+      </a>
+    </template>
   </body>
 </html>
