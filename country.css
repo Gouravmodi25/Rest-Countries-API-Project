@@ -21,6 +21,7 @@
 .country-details img {
   /* height: 330px; */
   width: 40%;
+  border: 1px solid #ddd;
   /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); */
 }
 
@@ -69,11 +70,7 @@
   .country-details img {
     width: 100%;
     max-width: 400px;
-    /* height: 200px; */
     flex-shrink: 0;
-    /* box-shadow: none; */
-  }
-  .back-button {
-    margin-bottom: 60px;
+    border: 1px solid #ddd;
   }
 }

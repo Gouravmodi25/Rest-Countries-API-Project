@@ -16,11 +16,25 @@
   <body>
     <header class="header">
       <div class="header-content">
-        <h2 class="title">Where is in World?</h2>
+        <h2 class="title"><a href="/">Where is in World?</a></h2>
         <p><i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode</p>
       </div>
     </header>
     <main class="card-container">
+      <div class="search-filter-container">
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search for a country...." />
+        </div>
+        <select class="filter-by-region">
+          <option hidden>Filter By Region</option>
+          <option value="Africa">Africa</option>
+          <option value="America">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </div>
       <div class="countries-container">
         <!-- <a href="#" class="country-card">
           <img id="flag" src="https://flagcdn.com/in.svg" alt="country-flag" />
