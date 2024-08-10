@@ -58,6 +58,8 @@ main {
 }
 .country-card img {
   width: 100%;
+  height: 167px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
 .card-text {
   padding-inline: 16px;
@@ -65,4 +67,13 @@ main {
 
 .card-text p {
   margin-block: 8px;
+}
+
+@media (max-width: 780px) {
+  .countries-container {
+    justify-content: center;
+  }
+  .header {
+    font-size: 12px;
+  }
 }
