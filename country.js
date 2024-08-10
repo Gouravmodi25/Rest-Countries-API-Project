@@ -10,18 +10,18 @@ const tld = document.querySelector(".tld");
 const currency = document.querySelector(".currency");
 const languages = document.querySelector(".language");
 const borderCountries = document.querySelector(".border-countries");
+const themeSwitcher = document.querySelector(".theme-switcher");
+const span = document.querySelector(".theme-switcher span");
+
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => {
     return res.json();
   })
   .then((data) => {
-    console.log(data);
     data.forEach((country) => {
-      console.log(country.languages);
       countryImage.src = country.flags.svg;
       countryNameH1.innerText = country.name.common;
       if (country.name.nativeName) {
-        console.log(Object.values(country.name.nativeName)[0].common);
         nativeName.innerText = Object.values(country.name.nativeName)[0].common;
       } else {
         nativeName.innerText = country.name.common;
@@ -50,9 +50,18 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
               borderCountryTag.innerText = data.name.common;
               borderCountryTag.href = `country.html?name=${data.name.common}`;
               borderCountries.append(borderCountryTag);
-              console.log(borderCountryTag);
             });
         });
       }
     });
   });
+
+themeSwitcher.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  console.log(document.body.className);
+  if (document.body.className == "dark") {
+    span.innerText = "Light";
+  } else {
+    span.innerText = "Dark";
+  }
+});

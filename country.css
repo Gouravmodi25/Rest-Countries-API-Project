@@ -1,7 +1,24 @@
+body {
+  ---background-color: white;
+  ---text-color: black;
+  ---element-color: white;
+  background-color: var(---background-color);
+  color: var(---text-color);
+  transition: 0.5s ease-in-out;
+}
+
+body.text {
+  ---element-color: hsl(209, 23%, 22%);
+  ---text-color: hsl(0, 0%, 100%);
+  background-color: var(---background-color);
+  color: var(---text-color);
+  transition: 0.5s ease-in-out;
+}
 .country-detail-container {
   max-width: 1200px;
   margin-inline: auto;
   margin-top: 45px;
+  color: var(---text-color);
 }
 
 .back-button {
@@ -21,7 +38,7 @@
 .country-details img {
   /* height: 330px; */
   width: 40%;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd9d;
   /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); */
 }
 
