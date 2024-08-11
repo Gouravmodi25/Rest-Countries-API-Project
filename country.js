@@ -60,8 +60,12 @@ themeSwitcher.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   console.log(document.body.className);
   if (document.body.className == "dark") {
-    span.innerText = "Light";
+    themeSwitcher.innerHTML = `
+      <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
+    `;
   } else {
-    span.innerText = "Dark";
+    themeSwitcher.innerHTML = `
+       <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
+    `;
   }
 });
