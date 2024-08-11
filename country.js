@@ -70,11 +70,11 @@ themeSwitcher.addEventListener("click", () => {
   console.log(document.body.className);
   if (document.body.className == "dark") {
     themeSwitcher.innerHTML = `
-    <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
+    <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
     `;
   } else {
     themeSwitcher.innerHTML = `
-    <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
+    <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Dark</span> Mode
     `;
   }
   document.body.classList.toggle("dark");
