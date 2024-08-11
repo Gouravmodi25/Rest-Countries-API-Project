@@ -12,6 +12,10 @@ const languages = document.querySelector(".language");
 const borderCountries = document.querySelector(".border-countries");
 const themeSwitcher = document.querySelector(".theme-switcher");
 const span = document.querySelector(".theme-switcher span");
+const theme = localStorage.getItem("theme");
+if (theme != null) {
+  document.body.classList.toggle("dark");
+}
 
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => {
@@ -57,15 +61,21 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   });
 
 themeSwitcher.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+  const theme = localStorage.getItem("theme");
+  if (theme != null) {
+    localStorage.removeItem("theme");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
   console.log(document.body.className);
   if (document.body.className == "dark") {
     themeSwitcher.innerHTML = `
-      <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
+    <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
     `;
   } else {
     themeSwitcher.innerHTML = `
-       <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
+    <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
     `;
   }
+  document.body.classList.toggle("dark");
 });

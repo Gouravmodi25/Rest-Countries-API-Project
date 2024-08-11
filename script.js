@@ -3,6 +3,10 @@ const filterByRegion = document.querySelector(".filter-by-region");
 const searchInput = document.querySelector(".search-container input");
 const themeSwitcher = document.querySelector(".theme-switcher");
 const span = document.querySelector(".header-content span");
+const theme = localStorage.getItem("theme");
+if (theme != null) {
+  document.body.classList.toggle("dark");
+}
 let allCountriesData;
 fetch("https://restcountries.com/v3.1/all")
   .then((response) => response.json())
@@ -53,14 +57,22 @@ searchInput.addEventListener("input", (e) => {
 });
 
 themeSwitcher.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+  const theme = localStorage.getItem("theme");
+  if (theme != null) {
+    localStorage.removeItem("theme");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
   if (document.body.className == "dark") {
+    document.body.classList.add("dark");
     themeSwitcher.innerHTML = `
-        <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
+    <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
     `;
   } else {
+    document.body.classList.remove("dark");
     themeSwitcher.innerHTML = `
     <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
     `;
   }
+  document.body.classList.toggle("dark");
 });
