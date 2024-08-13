@@ -4,7 +4,7 @@ body {
   ---element-color: white;
   background-color: var(---background-color);
   color: var(---text-color);
-  transition: ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 body.text {
@@ -12,7 +12,7 @@ body.text {
   ---text-color: hsl(0, 0%, 100%);
   background-color: var(---background-color);
   color: var(---text-color);
-  transition: ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 .country-detail-container {
   max-width: 1200px;
