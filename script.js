@@ -64,14 +64,12 @@ themeSwitcher.addEventListener("click", () => {
     localStorage.setItem("theme", "dark");
   }
   if (document.body.className == "dark") {
-    document.body.classList.add("dark");
     themeSwitcher.innerHTML = `
     <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
     `;
   } else {
-    document.body.classList.remove("dark");
     themeSwitcher.innerHTML = `
-    <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
+    <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
     `;
   }
   document.body.classList.toggle("dark");
