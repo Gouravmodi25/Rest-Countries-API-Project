@@ -7,6 +7,15 @@ const theme = localStorage.getItem("theme");
 if (theme != null) {
   document.body.classList.toggle("dark");
 }
+if (document.body.className == "dark") {
+  themeSwitcher.innerHTML = `
+  <i class="fa-solid fa-sun"></i>&nbsp;&nbsp;<span>Light</span> Mode
+  `;
+} else {
+  themeSwitcher.innerHTML = `
+  <i class="fa-regular fa-moon"></i>&nbsp;&nbsp;<span>Dark</span> Mode
+  `;
+}
 let allCountriesData;
 fetch("https://restcountries.com/v3.1/all")
   .then((response) => response.json())
